@@ -10,10 +10,18 @@ before_install:
 script:
   # Flag assures test suite will exit on completion
   # - docker run newenay/react-test npm test -- --coverage
-  - docker run -e CI=true USERNAME/react-test npm test
+  - docker run -e CI=true newenay/react-test npm test
 
 after_success:
   - docker build -t newenay/multi-client ./client
   - docker build -t newenay/multi-nginx ./nginx
   - docker build -t newenay/multi-server ./server
   - docker build -t newenay/multi-worker ./worker
+  
+  # Log into docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push newenay/multi-client
+  - docker push newenay/multi-nginx
+  - docker push newenay/multi-server
+  - docker push newenay/multi-worker
