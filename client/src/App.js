@@ -24,15 +24,14 @@ function App() {
             Learn React
           </a> */}
 
+          <Link to="/" className="App-link">Home</Link>
+          <Link to="/otherpage" className="App-link">Other Page</Link>
         </header>
         <div className="App-body">
-          <Link to="/">Home</Link>
-          <Link to="/otherpage">Other Page</Link>
-          
-          <div>
-            <Route exact path="/" component={Fib} />
-            <Route path="/otherpage" component={OtherPage} />
-          </div>
+
+          <Route exact path="/" component={Fib} />
+          <Route path="/otherpage" component={OtherPage} />
+
         </div>
       </div>
     </Router>
