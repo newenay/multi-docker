@@ -3,8 +3,9 @@ WORKDIR '/app'
 COPY ./package.json ./
 
 RUN npm install
+# BUG Fix Annoyance: whereby this folder is duplicated into server
+# & worker folders on docker-compose build, no affect on app's performance.
 RUN mkdir -p node_modules/.cache && chmod -R 777 node_modules/.cache
 
 COPY . .
 CMD ["npm", "run", "start"]
-
