@@ -21,7 +21,7 @@ after_success:
   # Log into docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push newenay/docker_workshop:multi-client
-  - docker push newenay/docker_workshop:multi-nginx
-  - docker push newenay/docker_workshop:multi-server
-  - docker push newenay/docker_workshop:multi-worker
+  - docker push newenay/multi-client
+  - docker push newenay/multi-nginx
+  - docker push newenay/multi-server
+  - docker push newenay/multi-worker
