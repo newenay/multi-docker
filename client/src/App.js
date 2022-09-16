@@ -23,7 +23,6 @@ function App() {
           >
             Learn React
           </a> */}
-
           <Link to="/" className="App-link">Home</Link>
           <Link to="/otherpage" className="App-link">Other Page</Link>
         </header>
