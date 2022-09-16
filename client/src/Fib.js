@@ -57,12 +57,13 @@ class Fib extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Enter your index:</label>
+                    <label>Enter your index: </label>
                     <input 
                         value={this.state.index}
                         onChange={event => this.setState( { index: event.target.value } )}
                     />
-                    <button>Submit</button>
+                    &nbsp;<button>Submit</button>
+                    <br /><p className="Helper-text">*Refresh to see values</p>
                 </form>
                 <h3>Indexes I have seen</h3>
                 {this.renderSeenIndexes()}
