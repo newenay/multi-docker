@@ -1,5 +1,5 @@
-language: generic
 sudo: required
+language: generic
 services:
   - docker
 
@@ -31,14 +31,14 @@ deploy:
   provider: elasticbeanstalk
   # found in url: http://multidocker-env.eba-g8phw9b5.us-east-1.elasticbeanstalk.com/
 
-  region: "us-east-1"
+  region: 'us-east-1'
   # See pic on 07_readme.md for guidance
-  app: "multi-docker"
-  env: "Multidocker-env"
+  app: 'multi-docker'
+  env: 'Multidocker-env'
   # Search AWS searchbar for 'S3 bucket', then click 'buckets'
-  bucket_name: "elasticbeanstalk-us-east-1-123793844064"
+  bucket_name: 'elasticbeanstalk-us-east-1-123793844064'
   # folder may not yet exist in bucket, but name same as appName
-  bucket_path: "multi-docker"
+  bucket_path: 'multi-docker'
   # only deploy master branches, not feature branches
 
   # environmental vars created in AWS (IAM), and imported in Travis
